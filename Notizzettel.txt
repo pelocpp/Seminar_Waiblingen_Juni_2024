@@ -1,0 +1,83 @@
+C/C++
+
+Peter Loos
+
+Java, C#, Mobile Progr. (Java), Flutter (Dart)
+
+
+Was sind meine Erwartungen
+
+Was muss drin sein  
+
+Was bringe ich mit 
+
+== Java to C/C++
+== JavaScript
+
+== C  
+== C++  C ist in C++ ECHT enthalten
+
+// =======================================================
+
+1. Topic:
+=========
+
+Datentyp Pointer in C:
+
+// =======================================================
+
+Java ===> ByteCode
+
+2 Übersetzungen:   QuellCode => Byte-Code (neutral)
+                   Byte-Code => Maschinencode (bestimmte Hardware)
+
+
+C/C++ ==> Maschinencode
+
+1 Übersetzung:     QuellCode => Maschinencode (bestimmte Hardware)
+
+// =======================================================
+
+C und "Übersetzen"
+
+a) Grammatik / Syntax   ==> Menü "Compile"
+
+b) Maschinencode        ==> Menü "Build / Erstellen"
+
+Anderes Thema:
+
+Programm ist auf mehrere Dateien verteilt.
+
+=======================================================
+
+Recap:
+
+Java, Interface:
+
+Besteht aus Methoden Signaturen
+
+            oder: Schnittstellen von Methoden.
+
+=======================================================
+
+In C/C++ wird ein Programm von 2 Tools gebaut:
+
+a) Compiler:   QuellCode => .obj File
+
+b) LINKER:     .obj File => 1 Datei mit Maschinencode
+
+
+.obj File:  Maschinennahe Beschreibung einer C/C++ Datei:
+=> Maschinen-Code
+=> Vorbelegung von globalen Variablen (Werte ....)
+=> Welche Funktionen werden aufgerufen 
+
+
+=======================================================
+
+Dennis Ritchie:
+
+"A programmer know what he does"
+
+
+
