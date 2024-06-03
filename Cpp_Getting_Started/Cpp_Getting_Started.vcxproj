@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Program.c" />
     <ClCompile Include="Topic_01_Pointer.c" />
+    <ClCompile Include="Topic_02_TypWandlung.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

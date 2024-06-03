@@ -27,5 +27,8 @@
     <ClCompile Include="Topic_01_Pointer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Topic_02_TypWandlung.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

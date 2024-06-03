@@ -4,6 +4,13 @@ Peter Loos
 
 Java, C#, Mobile Progr. (Java), Flutter (Dart)
 
+// =======================================================
+
+https://github.com/pelocpp
+
+
+
+// =======================================================
 
 Was sind meine Erwartungen
 
@@ -79,5 +86,93 @@ Dennis Ritchie:
 
 "A programmer know what he does"
 
+========================================================
 
+
+// indirekte Wertzuweisung  
+    *ip = 456;  
+00007FF715292B65  mov         rax,qword ptr [ip]  
+00007FF715292B69  mov         dword ptr [rax],1C8h  // 456
+   
+// direkte Wertzuweisung           
+    n = 456;
+00007FF715292B6F  mov         dword ptr [n],1C8h  
+
+========================================================
+
+C: Datentyp Pointer
+
+      == Adressen bilden und verwenden
+      == Adress Arithmetik
+
+C++:  Datentyp Pointer
+      Datentyp Referenz
+
+========================================================
+
+== Adress Arithmetik
+
+int* ip;   
+
+...   // ip: 0x1024
+
+ip = ip + 1;   // ip: 0x1028
+
+Weil ein int im Speicher 4 Bytes belegt
+und man mit der Addition von 1 zum
+nächsten möglichen int-Wert schreiten möchte
+
+Beispiel: ... AC4  => ... AC8
+
+// ==============================================
+
+
+Wie werden int-Werte im Speicher abgelegt ???
+
+Binärdarstellung
+
+2-er Komplement.: Rechenvorschrift:
+
+int-Wert ===> Bits (0 und 1) umgesetzt wird.
+
+
+
+
+0001 0101 = 1 mal2 hoch 0 + 1 mal2 hoch 2 +  1 mal2 hoch 4 =1 + 4 + 16 = 21
+
+
+    d = f;
+00007FF7484150F7  cvtss2sd    xmm0,dword ptr [f]  
+00007FF7484150FC  movsd       mmword ptr [d],xmm0  
+    f = d;
+00007FF748415101  cvtsd2ss    xmm0,mmword ptr [d]  
+00007FF748415106  movss       dword ptr [f],xmm0  
+
+cvt: convert single-scalar 
+
+// ==========================================
+
+Parameter-Übergabe
+
+https://github.com/pelocpp/cpp_introduction/blob/master/Cpp_Introduction/Markdown/ParameterPassingTechniques.md
+
+Parameterübergabemechanismus Call-by-Value
+
+Achtung:
+
+'XXX' differs in levels of indirection from 'XXX *' :: FEHLER
+
+
+Die Abschnitte auf dem Stack nennt man auch
+
+Stack Frame
+
+====> Microcomputer Programmierung  // Stack Frame
+
+
+============================================================
+
+https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/Zeiger/Exercises_Zeiger.md
+
+https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/Tausche/Exercises_Tausche.md
 
