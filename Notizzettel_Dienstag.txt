@@ -1,0 +1,365 @@
+C/C++
+
+Peter Loos
+
+Dienstag
+
+// =======================================================
+
+https://github.com/pelocpp
+
+// =======================================================
+
+Referenzen:
+
+C:    Pointer / Zeiger
+
+C++:  == Pointer / Zeiger
+
+      == Referenzen
+
+Was ist eine Referenz ???
+
+a) intern: eine Adresse des Originals
+
+b) ein Alias-Name (Stellvertreter)
+
+
+Ein Vergleich:
+
+    *ip = *ip + 1;
+00007FF6898A2023  mov         rax,qword ptr [ip]  
+00007FF6898A2027  mov         eax,dword ptr [rax]  
+00007FF6898A2029  inc         eax  
+00007FF6898A202B  mov         rcx,qword ptr [ip]  
+00007FF6898A202F  mov         dword ptr [rcx],eax  
+
+    ri = ri + 1;
+00007FF6898A2051  mov         rax,qword ptr [ri]  
+00007FF6898A2055  mov         eax,dword ptr [rax]  
+00007FF6898A2057  inc         eax  
+00007FF6898A2059  mov         rcx,qword ptr [ri]  
+00007FF6898A205D  mov         dword ptr [rcx],eax  
+
+    n = n + 1;
+00007FF6898A205F  mov         eax,dword ptr [n]  
+00007FF6898A2062  inc         eax  
+00007FF6898A2064  mov         dword ptr [n],eax  
+
+=================================================
+
+Wiederholung:
+
+Call-by-Value
+
+bool b = now.equals(pause);
+
+Hier wird eine Kopie von pause erstellt !!!
+
+VORSICHT:
+
+Das ist für Java-Dev. nicht existent !!!
+
+// JAVA - Kopie
+
+bool b = now.equals(pause.clone());
+
+VORSICHT: C++ ist EXTREM ANFÄLLIG FÜR UNNÜTZE KOPIEN
+
+(( C++ 11: Move-Semantik ))
+
+Call-for-Action:
+
+Referenzen, soweit möglich, bei Paramtern verwenden
+
+ZUSATZ: Merker 
+
+// =======================================================
+
+Virtueller Methodenaufruf
+
+C++
+
+== virtual                    dynamisch
+== (( ohne virtual ))         statisch
+
+Java
+
+==  -                         dynamisch
+==  final                     statisch
+
+// =======================================================
+
+Call-for-Action:
+
+const SOWEIT MÖGLICH einsetzen.
+
+Why ????????????????????????????
+
+Funktionale Programmierung
+
+IST VIEL BESSER OPTIMIERBAR  !!!  Parallelisierung
+
+KEIN STATE // Zustand
+
+// =======================================================
+
+'int Time::getHours(void)':
+
+cannot convert 'this' pointer from 'const Time' to 'Time &'
+
+Welches Wort steht in Zeile 109: const
+
+// =======================================================
+
+
+FAZIT:
+
+Parameter-Übergabe in C++:
+
+a) Referenzen verwenden - bei Objekten IMMER (90%)
+
+b) NUR Wenn man ein Objekte schützen möchte: Eine Kopie übergeben.
+
+c) Referenzen - soweit möglich - als const definieren.
+
+d) Primive Typen: Übergabe als Kopie
+
+// =======================================================
+
+
+
+
+A) =================
+
+// C++-stylistic
+void Time::setMinutes(int minutes)
+{
+    m_minutes = minutes;
+00007FF738193414  mov         rax,qword ptr [this]  
+00007FF73819341B  mov         ecx,dword ptr [minutes]  
+00007FF738193421  mov         dword ptr [rax+4],ecx  
+}
+
+B) =================
+
+void Time::setSeconds(int& seconds)
+{
+    m_seconds = seconds;
+00007FF738193465  mov         rax,qword ptr [this]  
+00007FF73819346C  mov         rcx,qword ptr [seconds]  
+00007FF738193473  mov         ecx,dword ptr [rcx]  
+00007FF738193475  mov         dword ptr [rax+8],ecx  
+}
+
+'void Time::setSeconds(int &)':
+
+cannot convert argument 1 from 'int'
+to 'int &'	
+
+
+
+// ======================================================
+
+Wie wird eine Kopie eines Objekts erstellt ?????
+
+A) Kopier-Konstruktor
+
+
+B) std::memcpy
+
+
+VORSICHT:
+
+void* memcpy( void* dest, const void* src, std::size_t count );
+
+// ======================================================
+
+Übung:
+
+OO:
+
+== Klasse und Objekt
+
+== Mehrere Dateien
+
+== getter / setter
+
+== const
+
+== Methoden mit Parameter (auch Klasse)
+
+4 Member-Variablen:
+
+x, y, width, height
+
+
+Option: FREIWILLIG
+
+3 Member-Variablen:
+
+    width, height
+
+    x und y sind in einem Objekt des Typs Point abgelegt.
+
+
+
+    class Rectangle {
+    
+    private: 
+
+        Point m_point;
+
+        int m_width;
+        int m_height;
+    
+    
+    }
+
+    ODER
+
+        class Rectangle {
+    
+    private: 
+
+        int m_x;
+        int m_y;
+
+        int m_width;
+        int m_height;
+    
+    
+    }
+
+====================================================================
+
+Überladen von Operatoren
+------------------------
+
+Wie ???
+
+A) Wie das Schreiben einer Methode:
+
+   Name der Methode:  operator ==
+
+   Beobachtung: Muss die Klasse erweitern können.
+
+
+B) Außerhalb der Klasse: Wie ???
+
+   Als globale Funktion.
+
+   ==> Kann auf die privaten Member der beteiligten Klasse nicht zugreifen
+
+   ==> Muss über das "public" Interface der Klasse gehen
+
+   Alternative:
+
+   Freundschaft aussprechen.
+
+   Wer: nur der Besitzer der Klasse.
+
+   Was ist die Konsequenz:
+
+   Für den "Freund" werden alle PRIVATE Daten PUBLIC.
+
+   "Code Smell"
+
+==============================================
+
+// JAVA
+class Node
+{
+    public int m_data;
+    public Node m_next;
+    // ..........
+};
+
+// =======================================================
+
+JAVA:
+
+a) es gibt Felder
+
+b) sie liegen ausschließlich auf der Halde / Heap
+
+c) Felder sind ebenfalls Objekte in Java
+
+int[] numbers = new int [10];
+
+...
+
+int n = numbers.length;
+
+...
+
+numbers = new int [20];
+
+Klasse ArrayList : Flexibel lang
+
+// =======================================================
+
+Gimmick:
+
+"C hat keine Felder !"
+
+Aber:
+
+C kennt Adressen ... und Arithmetik mit Adressen
+
+// =======================================================
+
+C/C++:
+
+A) Arrays: FIXED SIZE ... sonst wie in Java
+
+B) Flexibel langes Feld:
+
+   Dynamische Daten.
+
+// =======================================================
+
+Zeichen: char
+
+Zeichenkette:
+
+C:   
+
+C++:  Klasse std::string
+
+// =======================================================
+
+Zeichen :  Singular
+
+Datentyp:  char
+
+Zeichensatz:   Codierung: 
+
+Zeichen <=>  ganzzahligen Wert:  ASCII-Tabelle.
+
+
+===================================================
+
+Java: Zeichensatz:  UNICODE
+
+char  => 2 Bytes.
+
+===================================================
+
+Wie kann man in C/C++ eine Zeichenkette definieren ???
+
+A) const char*      Anfangsadresse einer Zeichenkette
+
+B) char[]           Feld von Zeichen
+
+C) C++ Bibliothek:  std::string
+
+===================================================
+
+Wie ist in C/C++ eine Zeichenkette aufgebaut ???
+
+Als ein Feld von Zeichen PLUS am Ende eine Null.
+
+
+
+

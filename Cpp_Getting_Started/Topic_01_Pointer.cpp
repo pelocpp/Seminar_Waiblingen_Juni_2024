@@ -104,3 +104,28 @@ void pointer_05()
 }
 
 // =================================================
+
+static void swap (int* x, int* y)
+
+{
+    int tmp = *x;
+
+    // x = y;
+    *x = *y;
+    *y = tmp;
+}
+
+void pointer_06()
+{
+    int n = 10;
+    int m = 20;
+
+    printf("n: %d, m: %d\n", n, m);
+
+    swap(&n, &m); 
+    //swap(10, 11);
+
+    printf("n: %d, m: %d\n", n, m);
+}
+
+// =================================================

@@ -176,3 +176,158 @@ https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/Z
 
 https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/Tausche/Exercises_Tausche.md
 
+// ==============================================
+// ==============================================
+// ==============================================
+
+C++
+===
+
+Klasse in C++:
+
+2 Dateien
+
+a) Beschreibung der Klasse:      Endung .h
+
+b) Implementierung der Klasse:   Endung .cpp
+
+Beispiel: 
+
+Uhrzeit:    Klasse Time
+
+Stunden, Minuten und Sekunden.
+
+
+==================================================
+
+Java:
+
+    >>>:  Java is heap-based (versus references).
+
+
+    Time now;
+
+    // was ist 'now': Eine Referenz
+
+    Time now = new Time(15, 12, 0);
+
+    void unterprogramm()
+    {
+        Time now = new Time(15, 12, 0);
+    }
+
+C++:
+
+    >>>:  C++ is stack-based.
+    >>>:  C++ is heap-based.
+
+
+    Time now;
+
+    void unterprogramm()
+    {
+        Time now;    // C++ is stack-based.
+    }
+
+    
+    void unterprogramm_02()
+    {
+        Time* than = new Time(15, 12, 0); // C++ is heap-based.
+
+        delete than;
+    }
+
+// ===========================================================
+
+Ressources freigeben:
+
+== try.. catch .. finally <=== Abstürze (Exception) kontrolliert zu behandeln.
+
+// ===========================================================
+
+== Objekt erzeugen:  ==> Ressources anfordern 
+
+== Objekt freigeben: ==> Ressources freigeben
+
+
+// ===========================================================
+
+Stolperfalle:
+
+    Time than();   
+
+C++: than ist die Deklaration einer Funktion ohne Parameter,
+     die ein Objekt des Typs Time zurückliefert.
+
+    https://stackoverflow.com/questions/14077608/what-is-the-purpose-of-the-most-vexing-parse
+
+
+
+
+class Size
+{
+public:
+    unsigned int width;
+    unsigned int height;
+}
+
+
+class Point
+{
+public:
+   int x;
+   int y;
+}
+
+// =================================================
+
+setter // falsche Werte:
+
+A) 
+
+void Time::setHours(int hours)
+{
+    if (hours >= 0 && hours < 24) {
+        m_hours = hours;
+    }
+    else {
+        throw std::exception("wrong value of hours");
+    }
+}
+
+B) 
+
+bool Time::setHours(int hours)
+{
+    if (hours >= 0 && hours < 24) {
+        m_hours = hours;
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+C) 
+
+void Time::setHours(int hours)
+{
+    if (hours >= 0 && hours < 24) {
+        m_hours = hours;
+        return true;
+    }
+    else {
+        // nothing: silent error recovery
+    }
+}
+
+========================================================
+
+Idiome / Paradigmen der OO:
+
+Ein Objekt besitzt zu JEDEM Zeitpunkt gültige Werte !!!
+
+================================================
+
+c++ operator precedence ==> Vorrang
+

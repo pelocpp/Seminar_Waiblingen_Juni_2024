@@ -13,22 +13,86 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Aufgabe_Rectangles">
+      <UniqueIdentifier>{e61354c6-fbaf-4417-a009-b32c3c63fc42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aufgabe_Zeichenketten">
+      <UniqueIdentifier>{841818af-d834-490e-872d-be8c1608f1f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Agenda_C_Cpp.pdf" />
+    <Text Include="..\Notizzettel_Montag.txt" />
+    <Text Include="..\Notizzettel_Dienstag.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Notizzettel.txt" />
+    <ClCompile Include="ProgramC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_01_Pointer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_02_TypWandlung.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramCpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main_Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_03_Referenzen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle\Point.cpp">
+      <Filter>Aufgabe_Rectangles</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle\Rectangle.cpp">
+      <Filter>Aufgabe_Rectangles</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle\Rectangle_Main.cpp">
+      <Filter>Aufgabe_Rectangles</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_04_Arrays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_05_Chars_Strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Strings\Strings_Main.cpp">
+      <Filter>Aufgabe_Zeichenketten</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Program.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Topic_01_Pointer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Topic_02_TypWandlung.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Image Include="..\Pointer_01.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Pointer_02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Pointer_03.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Pointer_04.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Agenda_C_Cpp.pdf">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle\Point.h">
+      <Filter>Aufgabe_Rectangles</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle\Rectangle.h">
+      <Filter>Aufgabe_Rectangles</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
