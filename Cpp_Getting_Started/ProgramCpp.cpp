@@ -13,6 +13,7 @@ extern void test_arrays_04();
 extern void test_arrays_05();
 
 extern void exerciseRectangle();
+extern void exerciseStrings();
 
 void test_chars_strings_01();
 void test_chars_strings_02();
@@ -28,7 +29,7 @@ int main()
 {
     // std::cout << "Hallo Cpp Seminar\n";
 
-    test_chars_strings_07();
+    exerciseStrings();
 
     return 0;
 }

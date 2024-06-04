@@ -29,13 +29,13 @@ static bool verifyDateFormat(const std::string& date)
         return false;
     }
 
-    int indices[]{ 0, 1, 3, 4, 6, 7, 8, 9 };
+    int indices[] = { 0, 1, 3, 4, 6, 7, 8, 9 };
 
     for (int i = 0; i < 8; ++i) {
 
         int index = indices[i];
 
-        if (std::isdigit(date[index]) == 0) {
+        if (! std::isdigit(date[index])) {
             return false;
         }
     }
@@ -159,8 +159,8 @@ static bool IsValid(int day, int month, int year)
 
 void exerciseStrings()
 {
-    //testVerifyDateFormat();
-    testDateToWord();
+    testVerifyDateFormat();
+    // testDateToWord();
 }
 
 // ===========================================================================
