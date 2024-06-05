@@ -15,21 +15,28 @@ extern void test_arrays_05();
 extern void exerciseRectangle();
 extern void exerciseStrings();
 
-void test_chars_strings_01();
-void test_chars_strings_02();
-void test_chars_strings_03();
-void test_chars_strings_04();
-void test_chars_strings_05();
-void test_chars_strings_06();
-void test_chars_strings_07();
+extern void test_chars_strings_01();
+extern void test_chars_strings_02();
+extern void test_chars_strings_03();
+extern void test_chars_strings_04();
+extern void test_chars_strings_05();
+extern void test_chars_strings_06();
+extern void test_chars_strings_07();
 
-void test_references();
+extern void test_references();
+
+extern void test_raii();
+
+extern void test_dynamic();
+
+extern void main_dynamic_int_array();
+
 
 int main()
 {
     // std::cout << "Hallo Cpp Seminar\n";
 
-    exerciseStrings();
+    main_dynamic_int_array();
 
     return 0;
 }

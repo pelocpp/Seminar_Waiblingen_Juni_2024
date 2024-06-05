@@ -2,7 +2,7 @@
 
 void test_arrays_01()
 {
-    int numbers1[10];
+    // int numbers1[10];
 
     int numbers2[10] = { 1, 2, 3 };
 
@@ -47,7 +47,9 @@ void printArray_04(int* feld, int len)
 
 void test_arrays_04()
 {
-    int numbers[5] = { 0 };
+    const int n = 5;
+
+    int numbers[n] = { 0 };  // FIXED-SIZE
 
     printArray_03(numbers, sizeof(numbers) / sizeof(int));
 }

@@ -2,9 +2,9 @@
 
 void test_time_01()
 {
-    Time now (15, 52, 33);
+    Time now (15, 52, 33);   // KEIN new !!!
 
-    Time than;
+    Time than;               // KEIN new !!!
 
     than.reset();
 

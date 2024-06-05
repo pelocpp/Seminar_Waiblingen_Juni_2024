@@ -1,0 +1,317 @@
+C/C++
+
+Peter Loos
+
+Mittwoch
+
+// =======================================================
+
+https://github.com/pelocpp
+
+// =======================================================
+
+Intel CPUs
+
+4 Segmente
+
+heute: 6 Segmente
+
+// =======================================================
+
+.exe File ===>  Betriebssystem zur Ausführung gebracht.
+
+Loader / Lader ===> Speicher:
+
+Informationen : Im .exe File abgelegt sind.
+
+Segmentregister	Beschreibung
+
+DS	Data Segment
+SS	Stack Segment
+CS	Code Segment   => Startadresse
+ES	Extra Segment (Heap)
+
+UNIX/LINUX:   Ausführbare Programm: KEINE Endung
+
+// =======================================================
+
+MERKER:
+
+Globale Variablen existieren so lange wie das Programm ausgeführt wird.
+-----------------
+
+OO Sprachen: Globale Variablen  lassen sich "struktieren"
+
+// =======================================================
+
+Beobachtung:
+
+Java
+
+GC:  Freigabe führt zu einer vielen kleinen
+     Lücken von freiem und belegetem Speicher
+
+
+     Defragmentierung: Lücken beseitigen.
+
+Was ist eine Referenz in Java:
+
+Doppelter Zeiger.
+
+Tabelle:
+
+Relocations-Tabelle:    Location ==> Wo ist etwas
+
+// =======================================================
+
+Java Programm: 
+
+Festplatte:  Byte Code
+
+Runtime:     VM
+
+a) Byte Code
+
+b) GC  ===> Tabellen .. pro Thread eine Tabelle
+
+c) 2. Compiler: Byte Code ===> Maschinencode
+
+d) Maschinencode ausgeführt
+
+e) KONTROLLIERTE Ausführung:
+
+   falscher Index[1000]
+
+f) Java: ROBUSTHEIT
+
+// ====================================
+
+Ausführung OHNE Eingriffe:
+
+a) C++: Extrem performant
+
+b) Sehr HW nahe Programmierung möglich
+
+===================================================
+
+Es gibt den new- und delete-Operator in zwei Ausprägungen – also auch syntaktisch in zwei Schreibweisen:
+
+new – Reserviert Speicher für eine einzelne Variable (Objekt).
+new [] – Reserviert Speicher für ein Feld von Variablen (Objekten).
+
+delete – Gibt Speicher einer einzelnen Variablen frei.
+delete [] – Gibt Speicher eines Felds von Variablen (Objekten) frei.
+
+A) "Scalar new/delete"
+B) "Array  new/delete"
+
+
+===================================================================
+
+
+database.Open();
+try {
+    database.DoRiskyOperation();
+} finally {
+    database.Close();
+}
+
+C++:
+
+A) Kein finally
+
+B) ES gibt etwas ANDERES:
+
+RAII:
+
+Was ist RAII:
+
+a) database.Open();
+
+b) database.DoRiskyOperation();
+   database.DoNormalOperation();
+   database.DoAnyOperation();
+
+c) database.Close();
+
+Wie wird das in C++ SAUBER gemacht:
+
+C++ habe ich - bei Objekten AM STACK -
+
+einen DETERMINSTISCHEN Aufruf von Konstruktoren und DESTRUKTOREN
+
+FAZIT:
+
+Das fehlende FINALLY wird in C++ auf den DESTRUKTOR 
+
+einer Hüllenklasse umgesetzt.
+
+
+Beispiel:
+
+Klasse mutex:
+
+mutex.lock();
+...  exception
+mutex.unlock();    =============> std::lock_guard
+
+=======================================================
+
+Was tut beispielsweise
+
+delete objectsOnTheHeap;
+
+bei 
+
+SimpleClass* objectsOnTheHeap = new SimpleClass[3];
+
+ICH BIN ÜBERSETUZUNGSFÄHIG und AUSFÜHRUNGSFÄHIG.
+
+"Man weiß es nicht"
+
+Technisch: UB ===> Undefined Behaviour
+
+=======================================================
+=======================================================
+
+Übung:
+
+Background:
+
+Arrays haben in C/C++ eine FESTE LÄNGE.
+
+Beispiel:
+
+int numbers[10];
+
+Es geht aber auch variabel:
+
+int length = 10;
+...
+int* m = new int[length];
+
+OO ==> Klasse 
+
+// =======================================================
+
+Nur nebenbei:
+
+C++ 23:
+
+The return of "std::printf"
+
+// =======================================================
+
+
+Ziel:
+
+std::cout << numbers;
+
+// Spielerei:
+operator << (std::cout , numbers)
+
+
+Methode:
+
+void operator << ( std::ostream& os,  const DynamicIntArray& obj );
+
+
+std::cout ist ein globales Objekt für die
+Ausgabe in eine Konsole:
+
+Typ: std::ostream
+
+// ===========================================
+
+Vorrang // Precedence
+
+Operatorenvorrang:
+
+int n = 3 + 4 * 5;   // 23,  nicht 35
+
+int n = 2 - 1 - 1;   // 0 
+
+int x, y, z;
+
+x = (y = (z = 3 + 4));
+
+statement:  // if
+            // assignment (Wertzuweisung): Keinen Wert in den meisten Programmiersprachen
+            // C/C:: HAT EINEN WERT: 
+            // der nach der Zuweisung in der Variablen "links" steht
+
+expression: // 3 + 4  ==> Wert
+
+Operatoren Assoziativität
+
+=================================================================
+
+Verkürzen:
+
+== Neuen Bereich mit 5 Werten anlegen:
+ 
+      Hmmm, kostet Laufzeit
+
+      Laufzeit
+
+      EAGER ==> Eifrig ==> "Das Problem SOFORT lösen"
+
+== Nur die Länge auf einen kleineren Wert setzen.
+
+      Hmmm, da geht "hinten" Speicher verloren
+
+      Speicher
+
+      LAZY ==> Faul
+
+
+====================================================
+
+A) Dynamisch Speicher anfordern
+
+new, delete
+
+B) Klasse mit dynamischem Speicher:
+
+   Klasse mit Zeigern/Pointer.
+
+   Konstruktor          // new
+
+   Destruktor           // delete
+
+   Methoden (resize):   // delete, new
+
+
+C) Nebeneffekt:  Robustheit
+
+
+===========================================
+
+Kopien in C++ und Java:
+
+C++:   Automatisch "on board":
+
+       Es wird ALLES kopiert.
+
+Java:  Via Interface "Cloneable" / clone
+
+===========================================
+
+C++:
+
+Lassen sich Kopier-Konstruktor und
+
+Wertzuweisungs-Operator vereinfachen bzw. bzgl.
+
+gemeinsamen Codes vereinfachen ????
+
+JA:  
+
+Idiom:
+
+Swap - Idiom 
+
+https://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom
+
+=======================================================
+

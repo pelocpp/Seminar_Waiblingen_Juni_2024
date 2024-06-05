@@ -45,7 +45,7 @@ public:
 
 public:
     // operator
-    // bool operator ==(const Time& other) const;
+     //bool operator ==(const Time& other) const;
 
 public:
     // public interface / methods

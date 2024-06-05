@@ -23,6 +23,7 @@
   <ItemGroup>
     <Text Include="..\Notizzettel_Montag.txt" />
     <Text Include="..\Notizzettel_Dienstag.txt" />
+    <Text Include="..\Notizzettel_Mittwoch.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgramC.cpp">
@@ -64,6 +65,21 @@
     <ClCompile Include="Strings\Strings_Main.cpp">
       <Filter>Aufgabe_Zeichenketten</Filter>
     </ClCompile>
+    <ClCompile Include="Topic_06_DynamicData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_07_RAII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicIntArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main_DynamicIntArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SwapIdiom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png">
@@ -93,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Rectangle\Rectangle.h">
       <Filter>Aufgabe_Rectangles</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicIntArray.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

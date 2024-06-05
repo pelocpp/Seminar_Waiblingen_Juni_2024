@@ -20,8 +20,6 @@ int main_c()
 {
     // printf("Hallo Seminar\n");
 
-    pointer_06();
-
     return 0;
 }
 

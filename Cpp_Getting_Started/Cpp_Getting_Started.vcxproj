@@ -131,9 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Notizzettel_Dienstag.txt" />
+    <Text Include="..\Notizzettel_Mittwoch.txt" />
     <Text Include="..\Notizzettel_Montag.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DynamicIntArray.cpp" />
+    <ClCompile Include="Main_DynamicIntArray.cpp" />
     <ClCompile Include="Main_Time.cpp" />
     <ClCompile Include="ProgramC.cpp" />
     <ClCompile Include="ProgramCpp.cpp" />
@@ -141,12 +144,15 @@
     <ClCompile Include="Rectangle\Rectangle.cpp" />
     <ClCompile Include="Rectangle\Rectangle_Main.cpp" />
     <ClCompile Include="Strings\Strings_Main.cpp" />
+    <ClCompile Include="SwapIdiom.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Topic_01_Pointer.cpp" />
     <ClCompile Include="Topic_02_TypWandlung.cpp" />
     <ClCompile Include="Topic_03_Referenzen.cpp" />
     <ClCompile Include="Topic_04_Arrays.cpp" />
     <ClCompile Include="Topic_05_Chars_Strings.cpp" />
+    <ClCompile Include="Topic_06_DynamicData.cpp" />
+    <ClCompile Include="Topic_07_RAII.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />
@@ -155,6 +161,7 @@
     <Image Include="..\Pointer_04.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynamicIntArray.h" />
     <ClInclude Include="Rectangle\Point.h" />
     <ClInclude Include="Rectangle\Rectangle.h" />
     <ClInclude Include="Time.h" />
