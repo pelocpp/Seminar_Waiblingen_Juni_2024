@@ -84,6 +84,9 @@
     <ClCompile Include="Topic_08_Vererbung.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Topic_09_Namespaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png">

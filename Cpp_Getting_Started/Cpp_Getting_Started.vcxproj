@@ -155,6 +155,7 @@
     <ClCompile Include="Topic_06_DynamicData.cpp" />
     <ClCompile Include="Topic_07_RAII.cpp" />
     <ClCompile Include="Topic_08_Vererbung.cpp" />
+    <ClCompile Include="Topic_09_Namespaces.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />

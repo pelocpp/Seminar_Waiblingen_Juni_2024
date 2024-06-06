@@ -1,6 +1,32 @@
 #include <iostream> // printf
 
-class Rectangle
+
+// ====================================================
+
+// Java
+//interface IRectangle
+//{
+//    void draw();
+//
+//    int n;
+//};
+
+// C++: Nachahmung eines Interfaces
+struct IRectangle
+{
+    virtual void draw() = 0;
+};
+
+struct ICloneable
+{
+    virtual void clone() = 0;
+};
+
+
+// ====================================================
+
+
+class Rectangle : public IRectangle, public ICloneable
 {
 private:
     int m_x;
@@ -24,19 +50,13 @@ public:
 
     void setX(int x) { m_x = x; }
 
+    // abstrakte Methode
+    virtual void draw() = 0;
+
     // public interface
     void eraseBackground()
     {
         std::cout << "  Rectangle::eraseBackground" << std::endl;
-    }
-
-    virtual void draw() {
-
-        std::cout
-        << "Rectangle::draw [x=" << m_x
-        << ", y=" << m_y << "]" << std::endl;
-
-        eraseBackground();
     }
 };
 
@@ -62,15 +82,47 @@ public:
         m_color = color;
     }
 
-    void draw() {
+    void draw() override {
 
         std::cout << "ColoredRectangle::draw" << std::endl;
-        Rectangle::draw();
         std::cout << "color=" << m_color << std::endl;
+    }
+
+    void clone() override
+    {
+        // ....
     }
 };
 
 // Tabelle: ColoredRectangle Länge 1:   ColoredRectangle::draw (Adresse)
+
+
+
+class TransparentRectangle : public Rectangle
+{
+private:
+    double m_opacity;   // Grad der Durchsichtigkeit
+
+public:
+    // c'tor(s)
+    TransparentRectangle() : TransparentRectangle(0, 0, 0, 0, 0.5) {}
+
+    TransparentRectangle(int x, int y, int width, int height, double opacity)
+        : Rectangle(x, y, width, height), m_opacity(opacity)
+    {
+    }
+
+    void draw() override {
+
+        std::cout << "TransparentRectangle::draw" << std::endl;
+        std::cout << "Opacity=" << m_opacity << std::endl;
+    }
+
+    void clone() override
+    {
+        // ....
+    }
+};
 
 
 
@@ -81,9 +133,6 @@ void test_inheritance_01()
     // cr.Rectangle::draw();
     cr.draw();
 }
-
-
-
 
 void test_inheritance_02()
 {
@@ -100,11 +149,33 @@ void test_inheritance_02()
 
 }
 
+void test_inheritance_03()
+{
+    ColoredRectangle cr1;
+    ColoredRectangle cr2;
 
+    TransparentRectangle tr1;
+    TransparentRectangle tr2;
 
+    // Polymorphismus
+
+    IRectangle* rectangles[4] = { &cr1 , &tr1, &cr2, &tr2 };
+
+    for (int i = 0; i < 4; ++i ) {
+
+        rectangles[i]->draw();
+    }
+}
+
+void test_inheritance_04()
+{
+    Rectangle* r = nullptr;
+
+    IRectangle* ir = nullptr;
+}
 
 void test_inheritance()
 {
-    test_inheritance_02();
+    test_inheritance_03();
 }
 

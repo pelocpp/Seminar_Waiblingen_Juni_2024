@@ -207,4 +207,139 @@ Mit 'final' kann ich zum Static Binding wechseln.
 
 ===============================================================
 
+Griechisch:
+
+
+Viele  ==> Poly
+
+Körper / Gestalt:   Morphus
+
+Vielgestaltigkeit: Polymorphismus
+
+============================================
+
+Warum ist in C++
+
+    virtual void draw() = 0;
+
+eine abstrakte Methode ???
+
+Bedeutet: In der vtable (Tabelle mit den Methodenadressen)
+steht an der Stelle von draw 0: KEINE Adresse.
+
+
+C++:
+
+Man spricht von "pure-virtual" Methoden.
+
+Keine Realisierung: abstrakt.
+
+============================================
+
+Was ist eine abstrakte Klasse ???
+
+== Eine unvollständige Klasse
+
+== Sie enthält abstrakte Methoden:
+
+   Schnittstellen / Deklarationen von Methoden,
+
+   aber KEINE Realisierung dieser Methoden.
+
+
+
+
+
+Wozu verwende ich eine abstrakte / unvollständige Klasse ???
+
+a) Sie sollte Daten enthalten, die für alle Kindklassen
+   relevant sind.
+
+b) Sie sollte Methoden inkl. Realisierung enthalten,
+   die für alle Kindklassen relevant sind.
+
+
+Modern C++:  Annotation 'override'
+
+
+Weiteres Schlüsselwort: final
+
+Damit verhindet man, dass in Kindeklassen die Methode
+
+nochmals abgeleitet, überschrieben wird.
+
+============================================
+
+Interfaces:
+
+Wie in Java geht das auch in C++:
+
+Hmm, etwas "einfach gestrickt" :)
+
+============================================
+
+Design:
+
+Hierarchie:
+
+A) Interfaces - durchaus mehrere
+
+B) Abstrakte Klassen:
+
+   i) Teilrealisierung der Funkionalität
+
+      "Kann man da was raus-faktorisieren"
+
+   ii) Daten, die für alle Kindklassen relevant sind.
+
+C) Konkrete Klassen:
+
+   Realisierung aller noch offenen abstrakten Methoden.
+
+=========================================================
+
+Was ist eine struct:
+
+A) Stammt von C:
+
+B) Beispiel:
+
+struct Person
+{
+   char name[20];
+   int  age;
+};
+
+Eine struct fasst Variablen / Daten
+unterschiedlichen Typs unter einem
+gemeinsamen Namen zusammen.
+
+Es gibt KEINE Funktionen / Methoden
+in einer struct.
+
+Was ist dann
+
+struct IRectangle
+{
+    virtual void draw() = 0;
+};
+
+Wenn man von der C-Regel bzgl. struct 
+abweicht:
+
+struct IRectangle
+{
+    virtual void draw() = 0;
+};
+
+identisch zu
+
+class IRectangle
+{
+public:
+    virtual void draw() = 0;
+};
+
+
+
 
