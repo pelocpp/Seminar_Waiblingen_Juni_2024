@@ -24,21 +24,19 @@ extern void test_chars_strings_06();
 extern void test_chars_strings_07();
 
 extern void test_references();
-
 extern void test_raii();
-
 extern void test_dynamic();
-
 extern void main_dynamic_int_array();
-
 extern void test_inheritance();
+extern void test_templates();
+extern void test_stl();
 
 
 int main()
 {
     // std::cout << "Hallo Cpp Seminar\n";
 
-    test_inheritance();
+    test_stl();
 
     return 0;
 }

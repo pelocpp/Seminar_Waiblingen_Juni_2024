@@ -340,6 +340,178 @@ public:
     virtual void draw() = 0;
 };
 
+=========================================================
+
+Die Standard-Bibliothek:
+------------------------
+
+Templates / Schablonen
+
+== Java Generics
+
+Historie:
+
+C++ :
+
+C++:
+----
+
+Bjarne Stroustrup:   C with Classes
+
+Generische Programmierung:
+--------------------------
+
+Alexander Alexandrowitsch Stepanow
+
+==> C with Classes  ==> Bibliothek
+
+Was ist Generische Programmierung: ????
+
+struct Location
+{
+    int x;
+    int y;
+};
 
 
+struct Location
+{
+    size_t x;
+    size_t y;
+};
 
+Unabhängigkeit von Datentypen in Klassen / Funktionen
+erreichen.
+
+Wie :
+
+===================================================
+
+Template:   Definieren
+
+Klassen:    Template instanziieren ==> Klasse
+
+Objekt:     Klasse instanziieren ==> Objekt
+
+===================================================
+===================================================
+
+C++ Standard Bibliothek: STL
+
+Standard Template Library 
+
+== Container        std::vector
+
+== Iteratoren       std::vector<T>::iterator
+
+== Algorithmus      std::for_each
+
+== Aufrufbares Objekt
+
+== for_each, wie es es in anderen Programmiersprachen gibt:
+   Range-Based for-Loop
+
+
+STL:   Design Zielen // Entwurf
+
+Um eine einheitliche Schnittstelle für
+UNTERSCHIEDLICHE Container zu haben.
+
+-------------------------------
+
+Leichte Analogie zu Java:
+
+== Container
+== interface Iterator
+
+
+========================================
+
+13 + 6
+19 + 9
+28 + 14
+42 + 21
+63 + 31 
+94
+
+n_neu = n_alt * 1.5 ;
+
+========================================
+
+STL:
+
+"durchlaufen": Vom ersten zum letzten Element
+
+
+Wie durchlaufe einen Vektor
+Wie durchlaufe einen Binary Search Tree
+Wie durchlaufe eine Hash Tabelle
+Wie durchlaufe eine einfach verkette Liste
+
+Gesucht: EIN EINHEITLICHES VERFAHREN.
+
+"STL Iteratoren Konzept"
+
+Was ist ein Iterator?
+
+Eine POSITION in einem Container.
+
+Was kann ein Iterator:
+
+A) Den Wert hinter der Position zurückliefern:
+
+   operator *
+
+B) Gehe von einer Position zur nächsten:
+
+   operator ++
+
+C) Vergleiche zwei Positionen:
+
+   operator ==
+
+
+Wie komme ich zu einem Iterator ???
+
+Ein Container muss Auskunft geben:
+
+begin()
+
+end()
+
+=======================================
+
+Why should I go for
+
+    std::fill(
+        numbers.begin(),
+        numbers.end(),
+        2
+    );
+
+Weil std::fill Optimierungen einsetzen kann,
+
+wie std::memset (ansatzweise), die uns auf der C++
+Ebene nicht zur Verfügung stehen.
+
+=======================================
+
+
+C++: Callable Object  // Functor 
+
+// ===============================================
+
+
+===>   STL:    PhoneBook    // Hash-Tabelle
+
+===>   void* Pointer
+
+===>   Range-Based for-Loop
+
+===>   Lambdas
+
+===>   auto
+
+===>   File lesen // kopieren ....
+
+15  // 15.30
