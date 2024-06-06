@@ -31,12 +31,14 @@ extern void test_dynamic();
 
 extern void main_dynamic_int_array();
 
+extern void test_inheritance();
+
 
 int main()
 {
     // std::cout << "Hallo Cpp Seminar\n";
 
-    main_dynamic_int_array();
+    test_inheritance();
 
     return 0;
 }

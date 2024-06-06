@@ -24,6 +24,7 @@
     <Text Include="..\Notizzettel_Montag.txt" />
     <Text Include="..\Notizzettel_Dienstag.txt" />
     <Text Include="..\Notizzettel_Mittwoch.txt" />
+    <Text Include="..\Notizzettel_Donnerstag.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgramC.cpp">
@@ -78,6 +79,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SwapIdiom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_08_Vererbung.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

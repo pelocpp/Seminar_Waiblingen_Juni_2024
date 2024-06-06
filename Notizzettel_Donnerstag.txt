@@ -1,0 +1,210 @@
+C/C++
+
+Peter Loos
+
+Donnerstag
+
+// =======================================================
+
+https://github.com/pelocpp
+
+// =======================================================
+
+Vererbung
+
+== Interfaces
+== Abstrakte Klassen
+
+STL
+
+// =======================================================
+
+Vererbung:
+
+Beobachtung: Technik eine Sache
+
+Technik: KEINE ANTWORT: WANN setze ich Vererbung ein ???
+
+Frage:
+
+== Klasse Rectangle
+
+== Klasse ColoredRectangle
+
+--  Ein ColoredRectangle ist eine Sorte von Rectangle
+
+--  Ein ColoredRectangle kann ein Rectangle erweitern
+
+==> Ein ColoredRectangle ist ein Rectangle.
+
+Beziehungen:   Relationships
+
+ist-ein Beziehung  // is-a Relationship
+
+Aussage: is-a  =======> Vererbung.
+
+Ein ColoredRectangle ist eine Spezialisierung eines Rechtecks.
+
+Ein Rectangle ist eine Verallgemeinerung (Generalisierung) eines ColoredRectangles.
+
+
+
+Probe:
+
+== Klasse Point / Punkt
+== Klasse Line / Linie
+
+Frage:
+
+Eine Linie enthält mehrere Punkte.
+
+??? Eine Linie ist ein Punkt
+
+??? Ein Punkt ist eine Linie
+
+=====>
+
+Niemals: Point und Linie das Prinzip der Vererbung anwenden
+
+Beziehung:
+
+Eine Linie (hat-einen /) hat-zwei Punkte.
+
+Hat-ein  / has-a Beziehung.
+
+class Line
+{
+    Point m_begin;
+    Point m_end
+}
+
+=====================================================
+
+Vererbung ====>
+
+Code soll wieder verwendet werden.
+
+Daten sollen an einer zentralen Stelle definiert werden
+
+Was wird NICHT vererbt ???
+
+KONSTRUKTOREN
+
+=================================================
+
+void test_inheritance()
+{
+    ColoredRectangle cr(1, 1, 10, 20, 99);
+
+    // cr.Rectangle::draw();
+
+    cr.draw();
+}
+
+draw verdeckt eine Methode desselben Namens in der Basisklasse
+
+VERDECKEN: Problematisch !!!!
+
+=================================================
+
+Beobachtung:
+
+"Vererbung" hat in der OO DREI Facetten:
+----------------------------------------
+
+A) Methode 'draw' ist in der KINDLASSE NICHT VORHANDEN. 
+
+   Erbschaft:
+
+   ==> Methoden der Vaterklasse werden an die Kindklasse vererbt.
+
+
+B) Methode 'draw' ist in der KINDLASSE VORHANDEN:
+
+   ==> Methode 'draw' ersetzt die Methode desselben Namens in der Vaterklasse.
+
+   ==> Die Erbschaft wird abgelehnt.
+
+   ==> VERDECKEN
+
+   ==> VORSICHT: Geruch // ist das so gemeint.
+
+
+C)  Methode 'draw' ist in der KINDLASSE VORHANDEN,
+    die Methode desselben Namens der Vaterklasse wird AUFGERUFEN:
+
+   ==> Methode 'draw' wird erweitert !!!
+
+=================================================
+
+Virtuelle Methodenaufrufmechnismus:
+
+
+== Dynamische Binden
+
+== Es wird der Aufruf zur LAUFZEIT festgelegt.
+
+== Runtime-Time Invocation
+
+== Dynamic Dispatch (Rust-Wording)
+
+((
+
+Wie wird das gemacht ?????????????????????????
+
+Adresse nicht bekannt!
+
+Die Methode wird INDIREKT aufgerufen.
+
+Wenn eine Klasse MINDESTENS eine virtuelle Methode hat:
+
+==> Tabelle mit Methodenadressen hinzugefügt:
+
+==> vtable / virtual function pointer table
+
+))
+
+
+Reguläre Methodenaufrufmechnismus:
+
+== Statisches Binden
+
+== Es wird der Aufruf zur ÜBERSETZUNGSZEIT festgelegt.
+
+== Compile-Time Invocation
+
+== Static Dispatch (Rust-Wording)
+
+
+Ein Vergleich:
+
+    rp->draw(); 
+00007FF67C502D11  mov         rax,qword ptr [rp]  
+00007FF67C502D15  mov         rax,qword ptr [rax]  
+00007FF67C502D18  mov         rcx,qword ptr [rp]  
+00007FF67C502D1C  call        qword ptr [rax]  
+
+    rp->eraseBackground();
+00007FF67C502D1F  mov         rcx,qword ptr [rp]  
+00007FF67C502D23  call        Rectangle::eraseBackground (07FF67C5019B0h)  
+
+
+Hmmmm,
+
+virtuelle Methoden sind im Aufruf LANGSAMER.
+
+===============================================================
+
+Bemerkung:
+
+Ein Vergleich zu Java:
+
+Wo ist das Schlüsselwort 'virtual' in Java:
+
+============> ALLES in Java ist per Default 'virtual'
+
+Mit 'final' kann ich zum Static Binding wechseln.
+
+===============================================================
+
+
