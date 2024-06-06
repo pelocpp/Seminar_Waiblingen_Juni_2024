@@ -19,12 +19,16 @@
     <Filter Include="Aufgabe_Zeichenketten">
       <UniqueIdentifier>{841818af-d834-490e-872d-be8c1608f1f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{3b239473-4d6b-4cc5-a83c-6faa62192620}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Notizzettel_Montag.txt" />
     <Text Include="..\Notizzettel_Dienstag.txt" />
     <Text Include="..\Notizzettel_Mittwoch.txt" />
     <Text Include="..\Notizzettel_Donnerstag.txt" />
+    <Text Include="..\Notizzettel_Freitag.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgramC.cpp">
@@ -93,6 +97,12 @@
     <ClCompile Include="Topic_11_STL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileSystem\FileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic_19_FileIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png">
@@ -111,6 +121,9 @@
   <ItemGroup>
     <None Include="..\Agenda_C_Cpp.pdf">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="FileSystem\FileSystem.md">
+      <Filter>FileSystem</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,27 @@
+C/C++
+
+Peter Loos
+
+Freitag
+
+// =======================================================
+
+https://github.com/pelocpp
+
+// =======================================================
+
+===>   STL:    PhoneBook    // Hash-Tabelle
+
+===>   void* Pointer
+
+===>   Range-Based for-Loop
+
+===>   Lambdas
+
+===>   auto
+
+===>   Range-Based for-Loop für ein beliebiges Objekt
+
+===>   File lesen // kopieren ....
+
+// =======================================================

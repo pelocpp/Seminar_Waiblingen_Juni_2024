@@ -8,7 +8,6 @@ extern void test_time_05();
 
 extern void test_arrays_01();
 extern void test_arrays_02();
-extern void test_arrays_03();
 extern void test_arrays_04();
 extern void test_arrays_05();
 
@@ -30,13 +29,15 @@ extern void main_dynamic_int_array();
 extern void test_inheritance();
 extern void test_templates();
 extern void test_stl();
+extern void main_filesystem();
+extern void test_file_io();
 
 
 int main()
 {
     // std::cout << "Hallo Cpp Seminar\n";
 
-    test_stl();
+    test_file_io();
 
     return 0;
 }
