@@ -31,15 +31,17 @@ extern void test_templates();
 extern void test_stl();
 extern void main_filesystem();
 extern void test_file_io();
+extern void test_auto();
 
 extern void test_Phonebook();
+extern void main_range_based_loop();
 
 
 int main()
 {
     // std::cout << "Hallo Cpp Seminar\n";
 
-    test_Phonebook();
+    main_range_based_loop();
 
     return 0;
 }

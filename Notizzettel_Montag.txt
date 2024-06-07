@@ -12,6 +12,11 @@ peter.loos@gmx.de
 
 // =======================================================
 
+Marc Gregoire, „Professional C++ (5th Edition)”.
+
+// =======================================================
+
+
 Was sind meine Erwartungen
 
 Was muss drin sein  

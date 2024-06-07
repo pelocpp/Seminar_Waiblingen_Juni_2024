@@ -4,6 +4,7 @@
 void test_file_io()
 {
     char line[256];
+
     std::ifstream file;
 
     // std::string fileName = "..\\..\\..\\..\\Topic_19_FileIO.cpp";

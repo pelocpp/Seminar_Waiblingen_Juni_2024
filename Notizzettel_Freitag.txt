@@ -10,21 +10,21 @@ https://github.com/pelocpp
 
 // =======================================================
 
-===>   Abspann
+===>   Abspann Yes ...
 
-===>   STL:    PhoneBook    // Hash-Tabelle
+===>   STL:    PhoneBook    // Hash-Tabelle:  Yes ...
 
-===>   void* Pointer
+===>   void* Pointer   Yes ...
 
 ===>   Range-Based for-Loop
 
-===>   Lambdas
+===>   Lambdas: Yes ...
 
 ===>   auto
 
 ===>   Range-Based for-Loop für ein beliebiges Objekt
 
-===>   File lesen // kopieren ....
+===>   File lesen // kopieren ....   Yes ...
 
 // =======================================================
 
@@ -138,3 +138,67 @@ Lambdas:
 
 https://github.com/pelocpp/cpp_modern/blob/master/GeneralSnippets/Lambda/Lambda.md
 
+// =======================================================
+
+
+Ab C++ C++ 17:
+
+Neues File-API:
+
+Siehe Datei "FileSystem.cpp" in diesem RePo.
+
+Siehe auch
+
+Filesystem library (since C++17)
+
+https://en.cppreference.com/w/cpp/filesystem
+
+// =======================================================
+
+void*
+
+A) Als Anwender haben wir mit void* eigentlich
+   keine Berührung.
+
+B) malloc (C)
+
+   new (C++)
+
+   std::malloc
+
+// =======================================================
+
+C++:
+
+Dynamische Speicherverwaltung:
+
+new
+
+===> Smart Pointer
+
+std::unique_ptr   ===> Klassischer Zeiger:
+
+                  Klärt Ownership !
+
+                  Move
+
+
+
+std::shared_ptr   ===> "Easy - GC Typ"
+
+(( std::weak_ptr ))
+
+Win-Situation: no delete  // wird von diesen Klassen
+  übernommen
+
+===>   RAII:  
+
+// =======================================================
+
+Realisierung eines Iterators:
+
+Siehe auch
+
+https://github.com/pelocpp/cpp_introduction/blob/master/Cpp_Introduction/Exercises/Exercises_STL_Lotto.md
+
+// =======================================================
