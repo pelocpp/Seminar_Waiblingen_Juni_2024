@@ -10,6 +10,8 @@ https://github.com/pelocpp
 
 // =======================================================
 
+===>   Abspann
+
 ===>   STL:    PhoneBook    // Hash-Tabelle
 
 ===>   void* Pointer
@@ -25,3 +27,114 @@ https://github.com/pelocpp
 ===>   File lesen // kopieren ....
 
 // =======================================================
+
+Hash - Tabelle:
+---------------
+
+Aufbau:
+
+Sie enthält Werte und Schlüssel.
+
+Beispiel:
+
+Wörterbuch:  Deutsch /             Englisch
+
+             Key / Schlüssel       Wert / Value
+
+             "Guten Morgen"        "Good morning"
+
+
+Telefonbuch:
+
+             Key / Schlüssel       Wert / Value
+
+             "Mueller"             34534534
+
+
+Hash-Tabelle:  Enthält viele Paare
+
+
+Hash-Funktionen:   Schlüssel        ===> INDEX
+
+                   "Hans Mueller"   ===> 152
+
+                   "Tina Meier"     ===> 152
+
+                   Kollision aufzulösen:
+
+                   Durch eine verkettete Liste kann man
+                   Werte desselben Index am selben Index
+                   unterbringen.
+
+// ========================================================
+
+std::unordered_map<std::string, size_t>   // Hashtabelle
+
+std::pair
+
+// ========================================================
+
+ignorieren
+discarding return value of function with [[nodiscard]] attribute	
+
+// ========================================================
+
+std::optional<size_t> number;
+
+A) bool
+
+C) realem Wert
+
+// ========================================================
+
+        std::for_each(
+            m_data.begin(),
+            m_data.end(),
+            A) Funktion
+        );
+
+
+Was ist eine Lambda-Funktion
+
+Eine Funktion OHNE Namen, die inplace an bestimmten Stellen
+formulierbar ist.
+
+// ========================================================
+
+Was ist eine Lambda-Funktion:
+
+KEINE FUNKTION:   FALSCH
+
+ES IST EIN OBJEKT.
+
+===> Instanzvariablen
+
+
+[ i = 0 ]    ===>    Type Deduction
+
+===========================================================
+
+
+High-End
+--------
+
+std::function:
+
+==> Lambda
+==> C-Funktion
+==> Callable
+==> Methode
+==> C-Funktionszeiger
+==>    aufrufen 
+
+TECHNIK:    TYPE ERASURE
+
+std::any
+
+/////////////////////////////////////////////////////////////
+
+Lambdas:
+
+
+https://github.com/pelocpp/cpp_modern/blob/master/GeneralSnippets/Lambda/Lambda.md
+

@@ -254,7 +254,8 @@ void test_stl_10()
 class ValueProvider
 {
 private:
-    int m_value;
+    mutable int m_value;
+    // std::mutex
 
 public:
 
@@ -267,7 +268,7 @@ public:
         return m_value;
     }
 
-    int operator () () {
+    int operator () () const {
         ++m_value;
         return m_value;
     }

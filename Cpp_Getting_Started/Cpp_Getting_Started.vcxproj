@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,6 +162,7 @@
     <ClCompile Include="Topic_09_Namespaces.cpp" />
     <ClCompile Include="Topic_10_Templates.cpp" />
     <ClCompile Include="Topic_11_STL.cpp" />
+    <ClCompile Include="Topic_12_Phonebook.cpp" />
     <ClCompile Include="Topic_19_FileIO.cpp" />
   </ItemGroup>
   <ItemGroup>
